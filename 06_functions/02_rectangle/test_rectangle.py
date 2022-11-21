@@ -1,5 +1,5 @@
 import unittest
-from rectangle import area
+from rectangle import area, perimeter
 
 
 class TestArea(unittest.TestCase):
@@ -14,3 +14,17 @@ class TestArea(unittest.TestCase):
     def test_area_negative_value_should_raise_error(self):
         self.assertRaises(ValueError, area, -5, 5)
         self.assertRaises(ValueError, area, 4, -5)
+
+
+class TestPerimeter(unittest.TestCase):
+
+    def test_perimeter(self):
+        self.assertEqual(perimeter(4, 5), 18, 'message')
+
+    def test_perimeter_incorrect_should_raise_error(self):
+        self.assertRaises(TypeError, perimeter, '4', 5)
+        self.assertRaises(TypeError, perimeter, 4, '5')
+
+    def test_perimeter_negative_value_should_raise_error(self):
+        self.assertRaises(ValueError, perimeter, -5, 5)
+        self.assertRaises(ValueError, perimeter, 4, -5)
