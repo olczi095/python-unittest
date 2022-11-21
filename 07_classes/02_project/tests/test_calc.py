@@ -1,4 +1,9 @@
+import sys
 import unittest
+
+path = '/Users/aleksandradabrowska/PycharmProjects/python-unittest/07_classes/02_project'
+sys.path.append(path)
+
 from calculator.calc_math import SimpleMathCalculator
 
 
