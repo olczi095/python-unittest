@@ -8,4 +8,12 @@ class TestSimpleMathCalculator(unittest.TestCase):
         self.calc = SimpleMathCalculator()
 
     def test_add(self):
-        self.assertEqual(self.calc.add(-3, -2), -5)
+        cases = [
+            (-3, -2, -5),
+            (-3, 2, -1),
+            (3, -2, 0),
+            (3, 2, 4)
+        ]
+        for x, y, result in cases:
+            with self.subTest(cases=cases):
+                self.assertEqual(self.calc.add(x, y), result)
